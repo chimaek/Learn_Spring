@@ -33,4 +33,8 @@ public class MemoryMemberRepo implements MemberRepo {
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
+
+    public void clear() {
+        store.clear();
+    }
 }
