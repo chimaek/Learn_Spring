@@ -1,8 +1,10 @@
 package com.learnprojects.example.Repositories;
 
 import com.learnprojects.example.Domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
+
 
 public class MemoryMemberRepo implements MemberRepo {
 

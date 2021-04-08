@@ -3,13 +3,16 @@ package com.learnprojects.example.Service;
 import com.learnprojects.example.Domain.Member;
 import com.learnprojects.example.Repositories.MemberRepo;
 import com.learnprojects.example.Repositories.MemoryMemberRepo;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
 public class MemberService {
 
     private final MemberRepo repo;
+
 
     public MemberService(MemberRepo memberRepo){
         this.repo = memberRepo;
