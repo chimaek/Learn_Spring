@@ -13,14 +13,16 @@ public class Posts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column(length = 500, nullable = false)
+    @Column(name = "title", length = 500, nullable = false)
     private String title;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false, name = "content")
     private String content;
 
+    @Column(name = "author")
     private String author;
 
     @Builder
