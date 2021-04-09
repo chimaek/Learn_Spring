@@ -4,17 +4,18 @@ import com.learnprojects.example.Domain.Member;
 import com.learnprojects.example.Repositories.MemberRepo;
 import com.learnprojects.example.Repositories.MemoryMemberRepo;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-
+@Transactional
 public class MemberService {
 
     private final MemberRepo repo;
 
 
-    public MemberService(MemberRepo memberRepo){
+    public MemberService(MemberRepo memberRepo) {
         this.repo = memberRepo;
 
     }

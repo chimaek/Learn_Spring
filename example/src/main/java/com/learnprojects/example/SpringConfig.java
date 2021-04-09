@@ -1,25 +1,26 @@
 package com.learnprojects.example;
 
 
-import com.learnprojects.example.Repositories.JdbcMemberRepo;
-import com.learnprojects.example.Repositories.MemberRepo;
-import com.learnprojects.example.Repositories.MemoryMemberRepo;
+import com.learnprojects.example.Repositories.*;
 import com.learnprojects.example.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 @Configuration
 public class SpringConfig
 {
-    private final DataSource dataSource;
+    private EntityManager em;
 
     @Autowired
-    public SpringConfig(DataSource ds){
-        dataSource = ds;
+    public SpringConfig(EntityManager em) {
+        this.em = em;
     }
+
     @Bean
     public MemberService memberService(){
         return new MemberService(repo());
@@ -27,6 +28,6 @@ public class SpringConfig
 
     @Bean
     public MemberRepo repo(){
-        return new JdbcMemberRepo(dataSource);
+        return new JpaMemberRepo(em);
     }
 }
