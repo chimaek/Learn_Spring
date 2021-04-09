@@ -3,31 +3,26 @@ package com.learnprojects.example.Service;
 import com.learnprojects.example.Domain.Member;
 import com.learnprojects.example.Repositories.MemberRepo;
 import com.learnprojects.example.Repositories.MemoryMemberRepo;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-class MemberServiceTest {
+@SpringBootTest
+@Transactional
+class MemberServiceIntergrationTest {
 
+    @Autowired
     MemberService memberService;
-    MemoryMemberRepo memberRepo;
 
-    @BeforeEach
-    public void beforeEach(){
-        memberRepo = new MemoryMemberRepo();
-        memberService= new MemberService(memberRepo );
-    }
-
-    @AfterEach
-    public void can(){
-        memberRepo.clear();
-    }
+    @Autowired
+    MemberRepo memberRepo;
 
     @Test
     void join() {
