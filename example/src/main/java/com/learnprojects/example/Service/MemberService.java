@@ -22,18 +22,9 @@ public class MemberService {
 
     /*register*/
     public Long join(Member member) {
-
-        long start = System.currentTimeMillis();
-        try{
-
-            VaildateMember(member);
-            repo.save(member);
-            return member.getId();
-        }finally {
-            long finish = System.currentTimeMillis();
-            long time = finish - start;
-            System.out.println(time);
-        }
+        VaildateMember(member);
+        repo.save(member);
+        return member.getId();
     }
 
     private void VaildateMember(Member member) {
