@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. [...값] 스프레드 연산자 ////
+
+      const a = [1, 2, 3];
+      const b = [...a];
+      console.log(`1. ${a}`);
+      console.log(`2. ${b}`);
+      b.push(4);
+      console.log(`${a}`);
+      console.log(`${b}`);
+
+      // concat은 깊은 복사 기존에 있던값에 추가됨 기존에 있던 값이 변하지는 않음 =>추가할 때 사용
+      const a2 = [1, 2, 3];
+      const b2 = a2.concat(4);
+      console.log(a2);
+      console.log(b2);
+      const a22 = [[...a], 4];
+      console.log(a22);
+
+      // 삭제할 떄 사용
+      const a3 = [1, 2, 3, 10];
+      const b3 = a3.filter((n) => {
+        return n % 10 == 0;
+      });
+      console.log(a3);
+      console.log(b3);
+
+      // 잘라내기
+      const a4 = [1, 2, 3];
+      const b4 = a4.slice(0, 2); //return [1,2]
+      console.log(b4);
+      const c4 = [...a4.slice(0, 2), 4, ...a4.slice(2, 3)]; //return [[1,2]]
+      console.log(c4);
+
+      //반복하기
+      const a5 = [1, 2, 3];
+      const b5 = a5.map((n) => n ** 2);
+
+      console.log(b5);
+      console.log(c5);
+    </script>
+  </body>
+</html>
