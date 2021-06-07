@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Child from './child';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Sub from './sub';
 // 1.실행방식
 // 변수선언은 var가 아닌 let또는 const로만 할것!
@@ -13,31 +13,38 @@ import Sub from './sub';
 // (3) 라이브러리 사용(부트스트랩)
 
 function App() {
-  console.log('실행됨');
-  const [number, setNumber] = useState(5);
+  const [data, setData] = useState(0);
 
-  let sample = [
-    { id: 10, name: '홍길동' },
-    { id: 11, name: '홍길' },
-    { id: 12, name: '홍동' },
-    { id: 13, name: '길동' },
-  ];
-
-  const [users, setUsers] = useState(sample);
+  const [search, setSearch] = useState(0);
+  //실행시점? -> app함수가 최초 실행될 때
+  useEffect(() => {
+    console.log('app실행됨');
+    download();
+  }, [search]);
 
   const download = () => {
-    setUsers([...users, { id: number, name: '홍2' }]);
-    setNumber(number + 1);
+    let downloadData = 5;
+    setData(downloadData);
   };
 
   return (
     <div>
-      <button onClick={download}>다운로드</button>
-      {users.map((u) => (
-        <h1>
-          {u.id},{u.name}
-        </h1>
-      ))}
+      <h1>검색:</h1>
+      <button
+        onClick={() => {
+          setSearch(2);
+        }}
+      >
+        검색하기
+      </button>
+      <h1>데이터{data}</h1>
+      <button
+        onClick={() => {
+          setData(data + 1);
+        }}
+      >
+        업데이트
+      </button>
     </div>
   );
 }
