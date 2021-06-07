@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Child from './child';
-import { useEffect, useMemo, useState } from 'react';
+import { createRef, useEffect, useMemo, useRef, useState } from 'react';
 import Sub from './sub';
 // 1.실행방식
 // 변수선언은 var가 아닌 let또는 const로만 할것!
@@ -13,42 +13,27 @@ import Sub from './sub';
 // (3) 라이브러리 사용(부트스트랩)
 
 function App() {
-  const [list, setList] = useState([1, 2, 3, 4]);
-  const [sample, setSample] = useState('합계');
-
-  const add = () => {
-    let sum = 0;
-    list.forEach((i) => (sum = sum + i));
-    console.log(sum);
-    return sum;
-  };
-
-  const addResult = useMemo(() => add(), [list]);
-
+  const myRef = useRef(null);
+  const [list, setList] = useState([
+    { id: 1, name: '잇' },
+    { id: 2, name: '잇' },
+  ]);
+  const myRefs = Array.from({ length: list.length }).map(() => createRef());
   return (
     <div>
       <button
         onClick={() => {
-          setSample('안녕');
+          console.log(myRef);
+          myRef.current.style.backgroundColor = 'red';
+          myRefs[0].current.style.backgroundColor = 'blue';
         }}
       >
-        문자변경
+        변경하기
       </button>
-      <button
-        onClick={() => {
-          setList([...list, 10]);
-        }}
-      >
-        추가하기
-      </button>
-      <div>
-        {list.map((n) => (
-          <h1>{n}</h1>
-        ))}
-      </div>
-      <div>
-        {sample}:{addResult}
-      </div>
+      <div ref={myRef}>박스</div>
+      {list.map((user, index) => (
+        <h1 ref={myRefs[index]}>{user.name}</h1>
+      ))}
     </div>
   );
 }
