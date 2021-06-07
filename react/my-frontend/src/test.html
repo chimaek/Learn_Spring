@@ -46,7 +46,23 @@
       const b5 = a5.map((n) => n ** 2);
 
       console.log(b5);
-      console.log(c5);
+
+      const users = [
+        { id: 1, name: 'seungju', phone: '6222' },
+        { id: 2, name: 'seungju2', phone: '5422' },
+        { id: 3, name: 'seungju4', phone: '5122' },
+      ];
+
+      const updateUserDto = {
+        id: 2,
+        name: '홍길동',
+      };
+
+      const newUser = users.map((n) =>
+        n.id === updateUserDto.id ? { ...n, ...updateUserDto } : n,
+      );
+
+      console.log(newUser);
     </script>
   </body>
 </html>

@@ -1,6 +1,8 @@
-rimport logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 import Child from './child';
+import { useState } from 'react';
+import Sub from './sub';
 // 1.실행방식
 // 변수선언은 var가 아닌 let또는 const로만 할것!
 // if 사용불가능 -> 삼항연산자 사용
@@ -10,28 +12,32 @@ import Child from './child';
 // (2) 외부파일 적는 방법
 // (3) 라이브러리 사용(부트스트랩)
 
-let a = 20;
 function App() {
-  let c;
-  console.log(c);
-  let b = 20;
+  console.log('실행됨');
+  const [number, setNumber] = useState(5);
 
-  function hello() {
-    let c = 20;
-  }
-  //(1)
-  const mystyle = {
-    color: 'red',
+  let sample = [
+    { id: 10, name: '홍길동' },
+    { id: 11, name: '홍길' },
+    { id: 12, name: '홍동' },
+    { id: 13, name: '길동' },
+  ];
+
+  const [users, setUsers] = useState(sample);
+
+  const download = () => {
+    setUsers([...users, { id: number, name: '홍2' }]);
+    setNumber(number + 1);
   };
 
   return (
     <div>
-      <div className="box-style">
-        안녕111{a + b}
-        {b === 20 && '20입니다.'}
-      </div>
-      <Child />
-      <hr></hr>
+      <button onClick={download}>다운로드</button>
+      {users.map((u) => (
+        <h1>
+          {u.id},{u.name}
+        </h1>
+      ))}
     </div>
   );
 }
