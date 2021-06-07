@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Child from './child';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Sub from './sub';
 // 1.실행방식
 // 변수선언은 var가 아닌 let또는 const로만 할것!
@@ -13,38 +13,42 @@ import Sub from './sub';
 // (3) 라이브러리 사용(부트스트랩)
 
 function App() {
-  const [data, setData] = useState(0);
+  const [list, setList] = useState([1, 2, 3, 4]);
+  const [sample, setSample] = useState('합계');
 
-  const [search, setSearch] = useState(0);
-  //실행시점? -> app함수가 최초 실행될 때
-  useEffect(() => {
-    console.log('app실행됨');
-    download();
-  }, [search]);
-
-  const download = () => {
-    let downloadData = 5;
-    setData(downloadData);
+  const add = () => {
+    let sum = 0;
+    list.forEach((i) => (sum = sum + i));
+    console.log(sum);
+    return sum;
   };
+
+  const addResult = useMemo(() => add(), [list]);
 
   return (
     <div>
-      <h1>검색:</h1>
       <button
         onClick={() => {
-          setSearch(2);
+          setSample('안녕');
         }}
       >
-        검색하기
+        문자변경
       </button>
-      <h1>데이터{data}</h1>
       <button
         onClick={() => {
-          setData(data + 1);
+          setList([...list, 10]);
         }}
       >
-        업데이트
+        추가하기
       </button>
+      <div>
+        {list.map((n) => (
+          <h1>{n}</h1>
+        ))}
+      </div>
+      <div>
+        {sample}:{addResult}
+      </div>
     </div>
   );
 }
