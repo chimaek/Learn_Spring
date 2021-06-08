@@ -8,6 +8,11 @@ import Homepage from './pages/Homepage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Route } from 'react-router';
+import Navigation from './components/Navigation';
+import ListPage from './pages/ListPage';
+import WritePage from './pages/WritePage';
+import Top from './components/Top';
+import Bottom from './components/Bottom';
 
 // 1.실행방식
 // 변수선언은 var가 아닌 let또는 const로만 할것!
@@ -18,19 +23,18 @@ import { Route } from 'react-router';
 // (2) 외부파일 적는 방법
 // (3) 라이브러리 사용(부트스트랩)
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
-
 function App() {
+  const [number, setNumber] = useState(1);
+
+  const addNumber = () => {
+    setNumber(number + 1);
+  };
+
   return (
-    <div>
-      <Header></Header>
-      <Route path="/" exact={true} component={Homepage} />
-      <Route path="/login/:id" exact={true} component={LoginPage} />
-      <Footer></Footer>
+    <div className="container">
+      <h1>최상단 화면</h1>
+      <Top number={number} />
+      <Bottom addNumber={addNumber} />
     </div>
   );
 }
