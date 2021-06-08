@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Child from './child';
 import { createRef, useEffect, useMemo, useRef, useState } from 'react';
-import Sub from './sub';
 import styled from 'styled-components';
-import Header from './components/Header';
-import Footer from './components/Footer';
+
 import LoginPage from './pages/LoginPage';
 import Homepage from './pages/Homepage';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { Route } from 'react-router';
 
 // 1.실행방식
 // 변수선언은 var가 아닌 let또는 const로만 할것!
@@ -27,8 +27,10 @@ const Title = styled.h1`
 function App() {
   return (
     <div>
-      <LoginPage></LoginPage>
-      <Homepage></Homepage>
+      <Header></Header>
+      <Route path="/" exact={true} component={Homepage} />
+      <Route path="/login/:id" exact={true} component={LoginPage} />
+      <Footer></Footer>
     </div>
   );
 }
