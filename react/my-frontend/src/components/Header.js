@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const headerList = styled.div`
+const StyledHeaderButtonDiv = styled.div`
   border: 1px solid black;
   height: 300px;
-  text-align: center;
+  background-color: ${(props) => props.backgroundColor};
 `;
 
 const Header = () => {
   return (
-    <headerList>
+    <StyledHeaderButtonDiv backgroundColor="blue">
       <ul>
         <li>메뉴1</li>
         <li>메뉴2</li>
       </ul>
-    </headerList>
+    </StyledHeaderButtonDiv>
   );
 };
 

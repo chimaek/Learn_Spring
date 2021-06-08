@@ -16,7 +16,7 @@ const Homepage = () => {
       { id: 3, title: '제목3', content: '내용3' },
     ];
     setBoard([...datas]);
-    setNumber(number + 1);
+    setNumber(1);
   }, []);
   return (
     <div>
