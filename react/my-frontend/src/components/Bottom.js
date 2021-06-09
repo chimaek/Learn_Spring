@@ -1,16 +1,22 @@
 import '../App.css';
 import React from 'react';
-import { Button } from '@material-ui/core';
+import { Button, ButtonGroup } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import { decrease, increase } from '../store';
 
-const Bottom = (props) => {
-  const { addNumber } = props;
-
+const Bottom = () => {
+  const dispather = useDispatch();
   return (
     <div className="sub_container">
       <h1>Bottom</h1>
-      <Button onClick={() => addNumber()} variant="contained">
-        증가
-      </Button>
+      <ButtonGroup>
+        <Button variant="contained" onClick={() => dispather(increase('2222'))}>
+          증가
+        </Button>
+        <Button variant="contained" onClick={() => dispather(decrease())}>
+          감소
+        </Button>
+      </ButtonGroup>
     </div>
   );
 };
