@@ -23,18 +23,18 @@ public class BookController {
         return new ResponseEntity<>(bookService.saveBook(book),HttpStatus.CREATED);
     }
 
-    @GetMapping("/book{id}")
+    @GetMapping("/book/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id){
         return new ResponseEntity<>(bookService.getOneBook(id),HttpStatus.OK);
     }
 
-    @PutMapping("/book{id}")
+    @PutMapping("/book/{id}")
     public ResponseEntity<?> update(@PathVariable Long id,@RequestBody Book book){
         return new ResponseEntity<>(bookService.ModifyBook(id,book),HttpStatus.OK);
     }
 
-    @DeleteMapping()
-    public ResponseEntity<?> deleteById(@PathVariable Long id,@RequestBody Book book){
+    @DeleteMapping("/book/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable Long id){
         return new ResponseEntity<>(bookService.deleteBook(id),HttpStatus.OK);
     }
 

@@ -30,7 +30,7 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    @Transactional()
+    @Transactional
     public Book ModifyBook(Long id, Book book) {
         //더티체킹
         Book bookEntity = bookRepository.findById(id)
