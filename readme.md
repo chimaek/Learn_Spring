@@ -12,4 +12,17 @@
 
 - yarn add react-router-dom
 - yarn add redux react-redux
-- yarn add react-bootstrap bootstrap
+- yarn add @material-ui/core
+- yarn add @material-ui/styles
+
+### 프로젝트 세팅
+
+```json
+{
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "printWidth": 80
+}
+```
