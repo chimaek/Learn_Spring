@@ -46,7 +46,8 @@ public class BookIntegrationTest {
 
     @BeforeEach
     public void 각테스트초기화() {
-        entityManager.createNativeQuery("ALTER TABLE book ALTER COLUMN id RESTART WITH 1").executeUpdate(); //h2문법
+//        entityManager.createNativeQuery("ALTER TABLE book ALTER COLUMN id RESTART WITH 1").executeUpdate(); //h2문법
+        entityManager.createNativeQuery("ALTER TABLE book AUTO_INCREMENT=1").executeUpdate();
     }
 
     @Test
@@ -147,11 +148,12 @@ public class BookIntegrationTest {
 
 
     }
+
     @Test
     public void 삭제테스트() throws Exception {
         Long id = 1L;
         //stub 행동지정하기
-        bookRepository.save(new Book(null,"name","me"));
+        bookRepository.save(new Book(null, "name", "me"));
 
         ResultActions resultActions = mockMvc.perform(delete("/book/{id}", id));
 
@@ -162,7 +164,7 @@ public class BookIntegrationTest {
         MvcResult result = resultActions.andReturn();
         String fin = result.getResponse().getContentAsString();
 
-        assertEquals("ok",fin);
+        assertEquals("ok", fin);
 
     }
 
