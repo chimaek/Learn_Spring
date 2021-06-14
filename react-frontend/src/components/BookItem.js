@@ -39,7 +39,7 @@ const BookItem = (props) => {
         >
           {title}
         </Typography>
-        <Link to={'/post/' + id} component={Button} variant="contained">
+        <Link to={'/book/' + id} component={Button} variant="contained">
           상세보기
         </Link>
       </CardContent>

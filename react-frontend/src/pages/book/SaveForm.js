@@ -1,11 +1,7 @@
 import React from 'react';
-
-const SaveForm = () => {
-  return (
-    <div>
-      <h1>책 등록하기</h1>
-    </div>
-  );
+import SignUp from '../../components/SignUp';
+const SaveForm = (props) => {
+  return <SignUp props={props}></SignUp>;
 };
 
 export default SaveForm;
