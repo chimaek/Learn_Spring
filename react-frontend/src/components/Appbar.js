@@ -14,6 +14,12 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { Link } from 'react-router-dom';
+import HomeIcon from '@material-ui/icons/Home';
+import CreateIcon from '@material-ui/icons/Create';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import UpdateIcon from '@material-ui/icons/Update';
 
 const useStyles = makeStyles((theme) => ({
   style: {
@@ -140,12 +146,41 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
+        <IconButton color="inherit" component={Link} to="/">
+          <HomeIcon></HomeIcon>
         </IconButton>
-        <p>Messages</p>
+        <p>Home</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton color="inherit" component={Link} to="/JoinForm">
+          <AssignmentIndIcon></AssignmentIndIcon>
+        </IconButton>
+        <p>Join</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton color="inherit" component={Link} to="/LoginForm">
+          <VpnKeyIcon></VpnKeyIcon>
+        </IconButton>
+        <p>Login</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton
+          aria-label="show 4 new mails"
+          color="inherit"
+          component={Link}
+          to="/saveForm"
+        >
+          {/* <Badge badgeContent={4} color="secondary"> */}
+          <CreateIcon />
+          {/* </Badge> */}
+        </IconButton>
+        <p>save</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton color="inherit" component={Link} to="/UpdateForm">
+          <UpdateIcon></UpdateIcon>
+        </IconButton>
+        <p>update</p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
@@ -199,10 +234,27 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={40} color="secondary">
-                <MailIcon />
-              </Badge>
+            <IconButton color="inherit" component={Link} to="/">
+              <HomeIcon></HomeIcon>
+            </IconButton>
+            <IconButton color="inherit" component={Link} to="/JoinForm">
+              <AssignmentIndIcon></AssignmentIndIcon>
+            </IconButton>
+            <IconButton color="inherit" component={Link} to="/LoginForm">
+              <VpnKeyIcon></VpnKeyIcon>
+            </IconButton>
+            <IconButton
+              aria-label="show 4 new mails"
+              color="inherit"
+              component={Link}
+              to="/saveForm"
+            >
+              {/* <Badge badgeContent={40} color="secondary"> */}
+              <CreateIcon />
+              {/* </Badge> */}
+            </IconButton>
+            <IconButton color="inherit" component={Link} to="/UpdateForm">
+              <UpdateIcon></UpdateIcon>
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
