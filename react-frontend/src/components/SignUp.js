@@ -69,7 +69,7 @@ export default function SignUp({ props }) {
   };
   const submitBook = (e) => {
     e.preventDefault(); // submit이 action을 안타고 자기 할일을 그만함.
-
+    console.log(e);
     axios
       .post('http://localhost:8080/book', book)
       .then((res) => {
