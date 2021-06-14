@@ -1,9 +1,9 @@
 import React from 'react';
-
-const UpdateForm = () => {
+import SignUp from '../../components/SignUp';
+const UpdateForm = (props) => {
   return (
     <div>
-      <h1>책 수정하기</h1>
+      <SignUp props={props}></SignUp>
     </div>
   );
 };

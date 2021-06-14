@@ -22,11 +22,14 @@ const Detail = (props) => {
       }
     });
   };
+  const updateBook = () => {
+    props.history.push('/updateForm/' + id);
+  };
   return (
     <div>
       <h1>책 상세보기</h1>
       <ButtonGroup variant="contained" color="primary">
-        <Button>수정</Button>{' '}
+        <Button onClick={updateBook}>수정</Button>{' '}
         <Button
           color="secondary"
           startIcon={<DeleteIcon />}

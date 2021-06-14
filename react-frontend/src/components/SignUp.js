@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -53,6 +53,14 @@ export default function SignUp({ props }) {
     title: '',
     author: '',
   });
+  const id = props.match.params.id;
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/book/' + id).then((res) => {
+      setBook(res.data);
+    });
+  }, []);
+
   const changeValue = (e) => {
     setBook({
       ...book,
@@ -122,8 +130,9 @@ export default function SignUp({ props }) {
                 // required
                 fullWidth
                 id="title"
-                label="title"
+                placeholder="title"
                 name="title"
+                value={book.title}
                 // type="text"
                 // autoComplete=""
                 onChange={changeValue}
@@ -135,9 +144,10 @@ export default function SignUp({ props }) {
                 // required
                 fullWidth
                 name="author"
-                label="author"
+                placeholder="author"
                 // type="text"
                 id="author"
+                value={book.author}
                 onChange={changeValue}
                 // autoComplete="current-password"
               />
