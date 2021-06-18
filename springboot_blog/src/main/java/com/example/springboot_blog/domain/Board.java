@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -29,12 +30,15 @@ public class Board {
     @ColumnDefault("0")
     private int countView;
 
-    @ManyToOne // many =board , one = user
+    @ManyToOne(fetch = FetchType.EAGER) // many =board , one = user
     @JoinColumn(name = "userId")
     private User userId; // db에서는 오브젝트를 저장할 수 없는데 jpa를 사용하면 코드에서 참조 테이블 정의가능
 
     @CreationTimestamp
     private Timestamp timestamp;
+
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER) //mappedby는 연관간계의 주인이 아니다. 컬럼을 만들지마세요.
+    private List<Reply> reply;
 }
 
 

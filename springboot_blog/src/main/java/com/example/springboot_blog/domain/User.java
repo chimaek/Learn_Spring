@@ -6,9 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -16,6 +18,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+//@DynamicInsert // null인 값에 칼럼에 넣지 안넣ㅇ음
 public class User {
 
     @Id
@@ -31,11 +34,11 @@ public class User {
     @Column(nullable = false,length = 50)
     private String email;
 
-    @ColumnDefault("'user'")
-    private String role; //enum을 쓰는게 좋다.
+    @Enumerated(EnumType.STRING)
+    private Role role; //enum을 쓰는게 좋다.
 
     @CreationTimestamp //시간 자동입력
-    private Timestamp createDate; //-> create_date
+    private LocalDateTime createDate; //-> create_date
 
 
 }

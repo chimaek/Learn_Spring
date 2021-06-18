@@ -1,26 +1,59 @@
 package com.example.springboot_blog.controller;
 
+import com.example.springboot_blog.domain.Role;
+import com.example.springboot_blog.domain.User;
+import com.example.springboot_blog.repository.UserRepository;
+import org.apache.logging.log4j.util.Supplier;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.SQLException;
+import java.util.List;
 
-@Controller
+
+@RestController
 public class BlogController {
     @Autowired
-    DataSource source;
+    private UserRepository userRepository;
 
-    @GetMapping("/test")
-    public String home() {
-//        Connection connection = source.getConnection();
-//        DatabaseMetaData databaseMetaData = connection.getMetaData();
-//        return "<h1>"+databaseMetaData.getDriverName()+databaseMetaData.getUserName()+databaseMetaData.getURL()+"</h1>";
-        return "test";
+    @GetMapping("/dummy/user/{id}")
+    public User detail(@PathVariable int id) {
+        return userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자는 없습니다."));
+
+
+    }
+
+    @GetMapping("/dummy/user")
+    public Page<User> pageList(@PageableDefault(size = 2, sort = "createDate", direction = Sort.Direction.DESC) Pageable pageable) {
+        Page<User> userPage = userRepository.findAll(pageable);
+        return userPage;
+    }
+
+    @GetMapping("/dummy/users")
+    public List<User> userList() {
+        return userRepository.findAll();
+    }
+
+
+    @PostMapping("/dummy/join")
+    public User join(@RequestBody User user) {
+
+        user.setRole(Role.ADMIN);
+        return userRepository.save(user);
+
+    }
+    @Transactional //더티 체킹 영속화....
+    @PutMapping("/dummy/user/{id}")
+    public User update(@PathVariable int id, @RequestBody User user) {
+        User user1 = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("계정이 없습니다."));
+        user1.setPassword(user.getPassword());
+        user1.setEmail(user.getEmail());
+        return user1;
     }
 
 }
