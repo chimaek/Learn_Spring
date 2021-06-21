@@ -5,6 +5,7 @@ import com.example.springboot_blog.domain.User;
 import com.example.springboot_blog.repository.UserRepository;
 import org.apache.logging.log4j.util.Supplier;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -54,6 +55,17 @@ public class BlogController {
         user1.setPassword(user.getPassword());
         user1.setEmail(user.getEmail());
         return user1;
+    }
+
+    @Transactional
+    @DeleteMapping("/dummy/user/delete/{id}")
+    public String delete(@PathVariable int id){
+        try {
+            userRepository.deleteById(id);
+        }catch (EmptyResultDataAccessException e){
+            return "삭제에 실패하였습니다.";
+        }
+        return "삭제 성공";
     }
 
 }
