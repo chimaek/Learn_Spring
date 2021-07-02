@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a492bd4-7f8f-4e38-9bf6-d20b22fe5447" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/springboot_blog/src/main/java/com/example/springboot_blog/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
