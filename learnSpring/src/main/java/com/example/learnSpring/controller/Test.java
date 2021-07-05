@@ -3,6 +3,7 @@ package com.example.learnSpring.controller;
 import com.example.learnSpring.model.User;
 import com.example.learnSpring.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -23,6 +24,7 @@ public class Test {
 
         return user;
     }
+
     @Transactional(readOnly = true)
     @GetMapping("/user/{id}")
     public User selectUser(@PathVariable int id) {
@@ -32,6 +34,20 @@ public class Test {
         });
 
     }
+
+    @DeleteMapping("/user/{id}")
+    public String deleteUser(@PathVariable int id) {
+
+        try {
+            userRepository.deleteById(id);
+
+        } catch (IllegalArgumentException e) {
+            return "삭제에 실패";
+        }
+
+        return "삭제됨....";
+    }
+
 
     @GetMapping("/user")
     public Page<User> users(@PageableDefault(size = 2, sort = "id", direction = Sort.Direction.ASC) Pageable page) {
