@@ -1,5 +1,6 @@
 package com.example.learnSpring.controller;
 
+import com.example.learnSpring.dto.ResponseDto;
 import com.example.learnSpring.model.User;
 import com.example.learnSpring.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,6 +51,7 @@ public class Test {
     }
 
 
+
     @GetMapping("/user")
     public Page<User> users(@PageableDefault(size = 2, sort = "id", direction = Sort.Direction.ASC) Pageable page) {
 
@@ -70,6 +73,9 @@ public class Test {
         return userRepository.save(user);
 
     }
+
+
+
 
 
 }
