@@ -31,6 +31,7 @@ public class Board {
     @ColumnDefault("0")
     private int count;
 
+
     @CreationTimestamp
     private Timestamp createDate;
 
@@ -40,6 +41,7 @@ public class Board {
     @JoinColumn(name = "userId")
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
+
 
     @OneToMany(mappedBy = "board", fetch = FetchType.EAGER) // 난 fk가 아니에요 조인칼럼이 없으니 해당 테이블에 데이터를 안만듦
     private List<Reply> reply;

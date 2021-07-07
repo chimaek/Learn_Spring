@@ -3,6 +3,8 @@
       rel="canonical"
       th:href="@{https://getbootstrap.com/docs/5.0/examples/sign-in/}"
     />
+     <!-- Bootstrap core CSS -->
+     <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -24,7 +26,7 @@
 
   <body class="text-center">
     <main class="form-signin">
-      <form th:action="@{/user/join}" method="POST">
+      <form>
         <img
           class="mb-4"
           th:src="@{/asset/img/img_ci_logo.jpg}"

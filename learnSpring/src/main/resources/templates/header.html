@@ -19,14 +19,29 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ui class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/blog/user/loginForm">로그인</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/blog/user/joinForm">회원가입</a>
-        </li>
-      </ui>
+      <div th:if="${session.principal == null}">
+        <ui class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/blog/user/loginForm">로그인</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blog/user/joinForm">회원가입</a>
+          </li>
+        </ui>
+      </div>
+      <div th:if="${session.principal != null}">
+        <ui class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/blog/board/writeForm">글쓰기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blog/user/userForm">회원정보</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blog/user/logout">로그아웃</a>
+          </li>
+        </ui>
+      </div>
     </div>
   </nav>
 </html>

@@ -3,8 +3,28 @@ let index = {
     $("#btn-save").on("click", () => {
       this.save();
     });
+    $("#btn-login").on("click", () => {
+      this.login();
+    });
   },
 
+  login: function () {
+    // alert("클릭됨");
+    let data = {
+      username: $("#username").val(),
+      password: $("#password").val(),
+    };
+    data = JSON.stringify(data);
+    axios
+      .post("/blog/api/user/login", data, {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+      })
+      .then((response) => {
+        location.href = "/blog";
+      });
+  },
   save: function () {
     // alert("클릭됨");
     let data = {
@@ -13,7 +33,6 @@ let index = {
       email: $("#email").val(),
     };
     data = JSON.stringify(data);
-    console.log(data);
     axios
       .post("/blog/api/user", data, {
         headers: {
@@ -21,8 +40,7 @@ let index = {
         },
       })
       .then((response) => {
-        console.log(response);
-        location.
+        location.href = "/blog";
       });
   },
 };
