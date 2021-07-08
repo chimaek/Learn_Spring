@@ -17,8 +17,8 @@ public class ApiController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private HttpSession session;
+//    @Autowired
+//    private HttpSession session;
 
     @PostMapping("/api/user")
     public ResponseDto<Integer> save(@RequestBody User user) {
@@ -28,14 +28,15 @@ public class ApiController {
         return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
     }
 
-    @PostMapping("/api/user/login")
-    public ResponseDto<Integer> login(@RequestBody User user) {
-        System.out.println("로그인 호출");
-        User principal = userService.login(user);
-        if (principal != null) {
-            session.setAttribute("principal", principal);
-        }
-        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
-    }
+    //레거시 로그인 without security
+//    @PostMapping("/api/user/login")
+//    public ResponseDto<Integer> login(@RequestBody User user) {
+//        System.out.println("로그인 호출");
+//        User principal = userService.login(user);
+//        if (principal != null) {
+//            session.setAttribute("principal", principal);
+//        }
+//        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+//    }
 
 }

@@ -16,13 +16,13 @@ let index = {
     };
     data = JSON.stringify(data);
     axios
-      .post("/blog/api/user/login", data, {
+      .post("/api/user/login", data, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
         },
       })
       .then((response) => {
-        location.href = "/blog";
+        location.href = "/";
       });
   },
   save: function () {
@@ -34,13 +34,13 @@ let index = {
     };
     data = JSON.stringify(data);
     axios
-      .post("/blog/api/user", data, {
+      .post("/api/user", data, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
         },
       })
       .then((response) => {
-        location.href = "/blog";
+        location.href = "/";
       });
   },
 };
