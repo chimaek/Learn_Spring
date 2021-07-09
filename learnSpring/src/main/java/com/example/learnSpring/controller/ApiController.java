@@ -6,6 +6,7 @@ import com.example.learnSpring.model.User;
 import com.example.learnSpring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,15 +18,15 @@ public class ApiController {
     @Autowired
     private UserService userService;
 
-//    @Autowired
+    //    @Autowired
 //    private HttpSession session;
 
-    @PostMapping("/api/user")
+
+    @PostMapping("/auth/joinProc")
     public ResponseDto<Integer> save(@RequestBody User user) {
-//        System.out.println("호출됨");
-        user.setRole(RollType.USER);
+        System.out.println("save 호출됨");
         userService.signUser(user);
-        return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
+        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 
     //레거시 로그인 without security
