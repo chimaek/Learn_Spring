@@ -25,12 +25,12 @@
 </style>
 
 <!-- Custom styles for this template -->
-<link th:href="@{/signin.css}" rel="stylesheet"/>
+<link th:href="@{signin.css}" rel="stylesheet"/>
 </head>
 
 <body class="text-center">
   <main class="form-signin">
-    <form th:action="@{#}" method="POST">
+    <form th:action="@{/auth/loginProc}" method="POST">
         <img
                 class="mb-4"
                 th:src="@{/asset/img/img_ci_logo.jpg}"
