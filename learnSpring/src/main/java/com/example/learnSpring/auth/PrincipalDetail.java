@@ -8,10 +8,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 
-@AllArgsConstructor
+
 public class PrincipalDetail implements UserDetails {
     private User user;
 
+    public PrincipalDetail(User user) {
+        this.user = user;
+    }
 
     @Override
     public String getPassword() {
