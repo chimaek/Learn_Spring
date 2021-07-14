@@ -1,0 +1,47 @@
+<div th:replace="./header.html"></div>
+
+<div class="container">
+  <button class="btn btn-secondary" onclick="history.back()">돌아가기</button>
+  <button class="btn btn-warning" id="btn-update">수정</button>
+  <button class="btn btn-danger" id="btn-delete">삭제</button>
+
+  <br /><br />
+  <div>
+    글 번호 : <span id="id"><i th:text="${board.id}"></i></span>
+  </div>
+  <div>
+    작성자 : <span id="id"><i th:text="${board.user.username}"></i></span>
+  </div>
+  <div>
+    글 등록 시간:
+    <span id="createDate"
+      ><i
+        th:text="${#dates.format({board.createDate},'yyyy년 mm월 dd일 hh:mm')}"
+      ></i>
+    </span>
+  </div>
+  <!-- <div>글 번호 : <span id="id"><i th:text="${board.}""></i></span></div> -->
+  <div class="form-group">
+    <label for="title" class="form-label">title</label>
+    <h3 th:text="${board.title}"></h3>
+  </div>
+  <hr />
+  <div class="form-group">
+    <label for="content">콘텐트</label>
+    <div th:utext="${board.content}"></div>
+  </div>
+  <hr />
+  <button id="btn-board-save" class="btn btn-primary" type="submit">
+    글등록
+  </button>
+</div>
+<script>
+  $(".summernote").summernote({
+    placeholder: "섬머노트",
+    tabsize: 2,
+    height: 300,
+  });
+</script>
+
+<script th:src="@{/js/board.js}"></script>
+<div th:replace="./footer.html"></div>
