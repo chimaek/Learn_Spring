@@ -2,13 +2,15 @@ package com.example.learnSpring.auth;
 
 import com.example.learnSpring.model.User;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-
+@Getter
 public class PrincipalDetail implements UserDetails {
     private User user;
 
