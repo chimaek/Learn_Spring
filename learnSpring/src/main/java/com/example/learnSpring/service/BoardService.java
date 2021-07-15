@@ -39,4 +39,18 @@ public class BoardService {
             return new IllegalArgumentException("아이디를 찾지못했습니다.");
         });
     }
+
+    @Transactional
+    public void delete(int id) {
+        boardRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void updateBoard(int id, Board requestBoard) {
+        Board board = boardRepository.findById(id).orElseThrow(() -> {
+            return new IllegalArgumentException("글찾기 실패");
+        }); // 영속화완료
+        board.setTitle(requestBoard.getTitle());
+        board.setContent(requestBoard.getContent());
+    }
 }

@@ -1,0 +1,36 @@
+<div th:replace="./header.html"></div>
+
+<div class="container">
+  <form>
+    <input type="hidden" id="id" th:value="${board.id}" />
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        th:value="${board.title}"
+      />
+      <label for="title" class="form-label">Title</label>
+    </div>
+    <div class="form-group">
+      <textarea
+        class="form-control summernote"
+        rows="5"
+        id="content"
+        th:utext="${board.content}"
+      ></textarea>
+    </div>
+  </form>
+  <button id="btn-board-update" class="btn btn-primary" type="submit">
+    글 수정 완료
+  </button>
+</div>
+<script>
+  $(".summernote").summernote({
+    placeholder: "섬머노트",
+    tabsize: 2,
+    height: 300,
+  });
+</script>
+<script th:src="@{/js/board.js}"></script>
+<div th:replace="./footer.html"></div>
