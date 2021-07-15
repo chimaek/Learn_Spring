@@ -3,16 +3,11 @@ package com.example.learnSpring.service;
 import com.example.learnSpring.model.Board;
 import com.example.learnSpring.model.User;
 import com.example.learnSpring.repository.BoardRepository;
-import net.bytebuddy.TypeCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 public class BoardService {

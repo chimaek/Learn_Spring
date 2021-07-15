@@ -3,6 +3,9 @@ let index = {
     $("#btn-save").on("click", () => {
       this.save();
     });
+    $("#btn-update").on("click", () => {
+      this.update();
+    });
     // $("#btn-login").on("click", () => {
     //   this.login();
     // });
@@ -40,6 +43,24 @@ let index = {
         },
       })
       .then((response) => {
+        location.href = "/";
+      });
+  },
+  update: function () {
+    let data = {
+      password: $("#password").val(),
+      email: $("#email").val(),
+      id: $("#id").val(),
+    };
+    data = JSON.stringify(data);
+    axios
+      .put("/user", data, {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+      })
+      .then((response) => {
+        alert("회원 수정이 완료되었습니다.");
         location.href = "/";
       });
   },

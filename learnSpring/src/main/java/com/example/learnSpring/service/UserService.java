@@ -31,6 +31,14 @@ public class UserService {
             return -1;
         }
     }
+    @Transactional
+    public void update(User requestUser) {
+        User user = userRepository.findById(requestUser.getId()).orElseThrow(()->{
+            return new IllegalArgumentException("유저가 없습니다.");
+        });
+        user.setEmail(requestUser.getEmail());
+        user.setPassword(encoder.encode(requestUser.getPassword()));
+    }
 
 //    @Transactional(readOnly = true)
 //    public User login(User user) {
