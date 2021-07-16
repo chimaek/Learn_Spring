@@ -4,6 +4,10 @@ import com.example.learnSpring.model.RollType;
 import com.example.learnSpring.model.User;
 import com.example.learnSpring.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,13 +35,15 @@ public class UserService {
             return -1;
         }
     }
+
     @Transactional
     public void update(User requestUser) {
-        User user = userRepository.findById(requestUser.getId()).orElseThrow(()->{
+        User user = userRepository.findById(requestUser.getId()).orElseThrow(() -> {
             return new IllegalArgumentException("유저가 없습니다.");
         });
         user.setEmail(requestUser.getEmail());
         user.setPassword(encoder.encode(requestUser.getPassword()));
+
     }
 
 //    @Transactional(readOnly = true)

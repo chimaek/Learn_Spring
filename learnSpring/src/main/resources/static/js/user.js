@@ -51,8 +51,10 @@ let index = {
       password: $("#password").val(),
       email: $("#email").val(),
       id: $("#id").val(),
+      username: $("#username").val(),
     };
     data = JSON.stringify(data);
+    console.log(data);
     axios
       .put("/user", data, {
         headers: {
