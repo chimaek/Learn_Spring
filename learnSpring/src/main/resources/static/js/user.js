@@ -42,9 +42,7 @@ let index = {
           "Content-Type": "application/json; charset=utf-8",
         },
       })
-      .then((response) => {
-        location.href = "/";
-      });
+      .then((response) => {});
   },
   update: function () {
     let data = {

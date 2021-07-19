@@ -5,6 +5,7 @@ import com.example.learnSpring.dto.ResponseDto;
 import com.example.learnSpring.model.RollType;
 import com.example.learnSpring.model.User;
 import com.example.learnSpring.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
-
+@Slf4j
 @RestController
 public class ApiController {
     @Autowired
@@ -35,13 +36,23 @@ public class ApiController {
     @PostMapping("/auth/joinProc")
     public ResponseDto<Integer> save(@RequestBody User user) {
         System.out.println("save 호출됨");
-        userService.signUser(user);
-        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+        User getUser = userService.findUser(user.getUsername());
+        log.info(getUser.getUsername());
+        if(getUser.getUsername() == null){
+            log.info("기존회원이 아닙니다.... 회원가입을 수행합니다.");
+            userService.signUser(user);
+            return new ResponseDto<>(HttpStatus.OK.value(),1);
+        }
+        return new ResponseDto<>(HttpStatus.BAD_REQUEST.value(), 2);
+
+//        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+//        SecurityContextHolder.getContext().setAuthentication(authentication);
     }
 
     @PutMapping("/user")
     public ResponseDto<Integer> update(@RequestBody User user) {
         userService.update(user);
+        
 //안되는 코드
 //        Authentication authentication = new UsernamePasswordAuthenticationToken(principal,null,principal.getAuthorities());
 //        SecurityContext securityContext = SecurityContextHolder.getContext();

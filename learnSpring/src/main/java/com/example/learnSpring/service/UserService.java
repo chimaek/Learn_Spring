@@ -46,6 +46,13 @@ public class UserService {
 
     }
 
+    @Transactional(readOnly = true)
+    public User findUser(String username){
+        return userRepository.findByUsername(username).orElseGet(()->{
+            return new User();
+        });
+    }
+
 //    @Transactional(readOnly = true)
 //    public User login(User user) {
 //        return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
