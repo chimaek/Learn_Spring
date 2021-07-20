@@ -1,5 +1,6 @@
 package com.example.learnSpring.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,7 +29,7 @@ public class Board {
     @Lob
     private String content;
 
-//    @ColumnDefault("0")
+    //    @ColumnDefault("0")
     private int count;
 
 
@@ -42,8 +43,11 @@ public class Board {
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
+    // 난 fk가 아니에요 조인칼럼이 없으니 해당 테이블에 데이터를 안만듦
+    @OrderBy("id desc")
+    @JsonIgnoreProperties({"board"})
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
 
-    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER) // 난 fk가 아니에요 조인칼럼이 없으니 해당 테이블에 데이터를 안만듦
     private List<Reply> reply;
 
 }

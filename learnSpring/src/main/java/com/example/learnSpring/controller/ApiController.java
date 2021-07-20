@@ -38,12 +38,15 @@ public class ApiController {
         System.out.println("save 호출됨");
         User getUser = userService.findUser(user.getUsername());
         log.info(getUser.getUsername());
-        if(getUser.getUsername() == null){
+        if(getUser.getUsername() != null){
+            return new ResponseDto<>(HttpStatus.BAD_REQUEST.value(), 2);
+
+        }else{
             log.info("기존회원이 아닙니다.... 회원가입을 수행합니다.");
             userService.signUser(user);
             return new ResponseDto<>(HttpStatus.OK.value(),1);
         }
-        return new ResponseDto<>(HttpStatus.BAD_REQUEST.value(), 2);
+
 
 //        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 //        SecurityContextHolder.getContext().setAuthentication(authentication);

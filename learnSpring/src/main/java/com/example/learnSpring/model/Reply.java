@@ -1,5 +1,6 @@
 package com.example.learnSpring.model;
 
+import com.example.learnSpring.dto.ReplySaveRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -38,6 +39,12 @@ public class Reply {
 
     @UpdateTimestamp
     private Timestamp updateDate;
+
+    public void update(User user,Board board,String content){
+        setUser(user);
+        setBoard(board);
+        setContent(content);
+    }
 
 
 }

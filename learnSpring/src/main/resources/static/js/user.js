@@ -42,7 +42,14 @@ let index = {
           "Content-Type": "application/json; charset=utf-8",
         },
       })
-      .then((response) => {});
+      .then((response) => {
+        console.log(response);
+        if (response.data.httpStatus === 400) {
+          alert("회원가입 실패");
+        } else {
+          alert("회원가입 성공");
+        }
+      });
   },
   update: function () {
     let data = {

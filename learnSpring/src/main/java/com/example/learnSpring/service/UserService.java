@@ -26,14 +26,8 @@ public class UserService {
         String Encpassword = encoder.encode(user.getPassword());
         user.setPassword(Encpassword);
         user.setRole(RollType.USER);
-        try {
-            userRepository.save(user);
-            return 1;
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("회원가입" + e.getMessage());
-            return -1;
-        }
+        userRepository.save(user);
+        return 1;
     }
 
     @Transactional
@@ -47,10 +41,8 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public User findUser(String username){
-        return userRepository.findByUsername(username).orElseGet(()->{
-            return new User();
-        });
+    public User findUser(String username) {
+        return userRepository.findByUsername(username).orElseGet(User::new);
     }
 
 //    @Transactional(readOnly = true)
