@@ -54,6 +54,34 @@
   <button id="btn-board-save" class="btn btn-primary" type="submit">
     글등록
   </button>
+  <hr />
+  <div class="card">
+    <div class="card-body">
+      <textarea rows="1" class="form-control"> </textarea>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary">등록</button>
+    </div>
+  </div>
+  <br />
+  <div class="card">
+    <div class="card-header">댓글 리스트</div>
+    <ul id="comment-items" class="list-group">
+      <li
+        th:each="comment : ${board.reply}"
+        class="list-group-item d-flex justify-content-between"
+      >
+        <div th:utext="${comment.content}">댓글 내용</div>
+        <div class="d-flex">
+          <div
+            class="fst-italic"
+            th:text="|작성자 : ${comment.user.username} &nbsp|"
+          ></div>
+          <button class="btn btn-danger badge">삭제</button>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 <script>
   $(".summernote").summernote({
