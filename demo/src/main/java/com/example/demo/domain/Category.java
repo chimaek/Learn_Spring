@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+import com.example.demo.domain.items.Item;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,6 +27,18 @@ public class Category {
             inverseJoinColumns = @JoinColumn(name="item_id")
     )
     private List<Item> items = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
+    private Category parent;
+
+    @OneToMany(mappedBy = "parent")
+    private List<Category> child = new ArrayList<>();
+
+    public void addChildCategory(Category child){
+        this.child.add(this);
+        child.setParent(this);
+    }
 
 
 }

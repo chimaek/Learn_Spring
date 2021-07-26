@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bulma.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/animate.css}" />
+    <link rel="stylesheet" th:href="@{/css/icofont.min.css}" />
+  </head>
+  <body>
+    <div th:replace="@{header}"></div>
+    <div th:replace="@{container}"></div>
+    <button
+      type="button"
+      id="me"
+      class="button is-primary"
+      th:text="${data}"
+    ></button>
+  </body>
+  <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+  <script>
+    $("#me").on("click", function () {
+      console.log($("me"));
+      this.classList.add("animate__animated", "animate__bounceOutRight");
+    });
+  </script>
+  <script>
+    $(".navbar-burger").click(function () {
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+    });
+  </script>
+</html>

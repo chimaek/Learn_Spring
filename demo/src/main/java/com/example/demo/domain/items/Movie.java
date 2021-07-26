@@ -1,6 +1,5 @@
 package com.example.demo.domain.items;
 
-import com.example.demo.domain.Item;
 import lombok.Getter;
 import lombok.Setter;
 
