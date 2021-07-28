@@ -6,6 +6,8 @@ import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -33,5 +35,21 @@ public class OrderRepository {
                 .getResultList();
 
     }
+    /*jpa criteria*/
+//    public List<Order> findAllByCriteria(OrderSearch orderSearch) {
+//        CriteriaBuilder cb = em.getCriteriaBuilder();
+//        CriteriaQuery<Order> cq = cb.createQuery(Order.class);
+//        Root<Order> o = cq.from(Order.class);
+//        Join<Object,Object> m = o.join("member", JoinType.INNER);
+//
+//        List<Predicate> criteria = new ArrayList<>();
+//
+//        if(orderSearch.getOrderStatus() != null){
+//            Predicate status = cb.equal(o.get("status"),orderSearch.getOrderStatus());
+//            criteria.add(status);
+//        }
+//
+//    }
+
 
 }
