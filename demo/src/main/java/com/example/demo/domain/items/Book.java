@@ -15,4 +15,15 @@ public class Book extends Item {
     private String author;
 
     private String isbn;
+
+
+    public static Book createBook(String name, String author, String isbn, int price, int quantity) {
+        Book book = new Book();
+        book.setName(name);
+        book.setIsbn(isbn);
+        book.setPrice(price);
+        book.setAuthor(author);
+        book.setStockQuantity(quantity);
+        return book;
+    }
 }
