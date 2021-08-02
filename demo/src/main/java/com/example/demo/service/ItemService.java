@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.items.Book;
 import com.example.demo.domain.items.Item;
 import com.example.demo.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,4 +29,12 @@ public class ItemService {
     public Item findOne(Long id) {
         return itemRepository.findOne(id);
     }
+
+    @Transactional
+    public void updateItem(Long id, Book bookget){
+        Item item = itemRepository.findOne(id);
+        item.setPrice(bookget.getPrice());
+    }
+
+
 }
