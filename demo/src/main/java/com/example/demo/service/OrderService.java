@@ -8,9 +8,12 @@ import com.example.demo.domain.items.Item;
 import com.example.demo.repository.ItemRepository;
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.OrderRepository;
+import com.example.demo.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
@@ -53,6 +56,10 @@ public class OrderService {
         Order order = orderRepository.findOne(orderId);
 
         order.cancel();
+    }
+
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findByString(orderSearch.)
     }
 
     //검색
