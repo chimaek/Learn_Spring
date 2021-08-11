@@ -28,5 +28,9 @@ public class LiftCycleTest {
             networkClient.setUrl("http://www.naver.com");
             return networkClient;
         }
+
+
+
+
     }
 }
