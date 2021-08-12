@@ -22,6 +22,7 @@ public class LiftCycleTest {
 
     @Configuration
     static class LifecycleConfig {
+
         @Bean
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
@@ -29,8 +30,7 @@ public class LiftCycleTest {
             return networkClient;
         }
 
-
-
-
     }
+
+
 }
