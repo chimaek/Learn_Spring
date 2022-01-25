@@ -4,27 +4,211 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a492bd4-7f8f-4e38-9bf6-d20b22fe5447" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="2de7726b-0dcd-4454-a64a-7471a5fda8eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot_aws/pratice/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot_aws/pratice/controller/PostsApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot_aws/pratice/domain/posts/Posts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot_aws/pratice/dto/HelloResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot_aws/pratice/dto/PostsSaveRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot_aws/pratice/repository/PostsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot_aws/pratice/service/PostsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot_aws/pratice/controller/HelloControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot_aws/pratice/controller/PostsApiControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot_aws/pratice/dto/HelloResponseDtoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springboot_aws/pratice/repository/PostsRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/AutoAppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/MemberApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/OrderApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/discount/DiscountPolicy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/discount/FixDiscountPolicy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/discount/RateDiscountPolicy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/member/Grade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/member/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/member/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/member/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/member/MemberServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/member/MemoryMemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/order/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/order/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/hello/core/order/OrderServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/resources/appConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/beanDefinition/BeanDefinitionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/beanFind/AppContextBasicFindTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/beanFind/AppContextExtendsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/beanFind/AppContextSameFindText.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/beanFind/ApplicationContextTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/discount/RateDiscountPolicyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/member/MemberServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/order/OrderServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/scan/AutoConfigTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/scan/filter/BeanA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/scan/filter/BeanB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/scan/filter/ComponentFilterAppconfigTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/scan/filter/MyExcludeComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/scan/filter/MyIncludeComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/singleton/ConfigrationSingletonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/singleton/SingletonService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/singleton/SingletonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/singleton/StatefulService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/singleton/StatefulServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/hello/core/xml/XmlContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/BookForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/ItemController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/MemberController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/MemberForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/Delivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/DeliveryStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/items/Album.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/items/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/items/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/items/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/domain/items/NotEnoughStockException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/repository/ItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/repository/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/repository/OrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/repository/OrderSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/ItemService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/static/css/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/static/css/bulma.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/static/js/jquery-3.6.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/fragment/bodyHeader.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/items/createItemForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/repository/MemberRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/service/OrderServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/static/css/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/static/css/bulma.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/static/css/bulma.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/static/css/icofont.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/static/img/icons8-menu.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/static/img/img_ci_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/static/js/jquery-3.6.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/templates/container.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/templates/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/LearnSpringApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/auth/PrincipalDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/auth/PrincipalDetailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/controller/ApiController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/controller/BoardApiController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/controller/BoardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/controller/PersonController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/controller/ReplyControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/dto/ReplySaveRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/handler/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/model/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/model/KakaoProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/model/OAuthToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/model/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/model/Reply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/model/RollType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/repository/BoardRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/repository/PersonRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/repository/ReplyRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/service/BoardService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/java/com/example/learnSpring/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/asset/img/img_ci_logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/asset/img/kakao_login_medium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/css/signin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/js/board.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/js/jquery-3.6.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/static/js/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/board/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/board/saveForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/board/updateForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/card.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/user/joinForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/user/loginForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/main/resources/templates/user/updateForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/test/java/com/example/learnSpring/LearnSpringApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpring/src/test/java/com/example/learnSpring/controller/UserControllerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="pratice" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1tTVmjN55iHIrzB1db82nwE4BrK" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="24BZG9mWQEWDNExaE6nRbigPaWy" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -33,41 +217,130 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="DatabaseDriversLRU" value="h2&#10;mariadb" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RunOnceActivity.OpenDatabaseViewOnStart" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.validation" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration name="ThymeleafWebserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.thymeleaf_webservice.ThymeleafWebserviceApplication" />
-      <module name="learn-spring" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pipir\Desktop\Learn_Spring\src\main\java\com\example\springboot_aws\pratice" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.springboot_aws.pratice.controller" />
+      <recent name="com.example.springboot_aws.pratice.repository" />
+      <recent name="com.example.springboot_aws.pratice.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PostsApiControllerTest">
+    <configuration name="HelloControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pratice.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.thymeleaf_webservice.*" />
+          <option name="PATTERN" value="com.example.springboot_aws.pratice.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.example.springboot_aws.pratice.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.springboot_aws.pratice.controller.HelloControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloResponseDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pratice.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.springboot_aws.pratice.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.springboot_aws.pratice.dto" />
+      <option name="MAIN_CLASS_NAME" value="com.example.springboot_aws.pratice.dto.HelloResponseDtoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostsApiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pratice.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.springboot_aws.pratice.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.springboot_aws.pratice.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.springboot_aws.pratice.controller.PostsApiControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostsRepositoryTest.post저장" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pratice.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.springboot_aws.pratice.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.springboot_aws.pratice.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.example.springboot_aws.pratice.repository.PostsRepositoryTest" />
+      <option name="METHOD_NAME" value="post저장" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PraticeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="pratice.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springboot_aws.pratice.PraticeApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ThymeleafWebserviceApplication" />
+        <item itemvalue="JUnit.PostsApiControllerTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7a492bd4-7f8f-4e38-9bf6-d20b22fe5447" name="Default Changelist" comment="" />
-      <created>1622793230916</created>
+      <changelist id="2de7726b-0dcd-4454-a64a-7471a5fda8eb" name="Changes" comment="" />
+      <created>1643105847015</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1622793230916</updated>
+      <updated>1643105847015</updated>
+      <workItem from="1643105849583" duration="4825000" />
+      <workItem from="1643111815846" duration="4796000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
